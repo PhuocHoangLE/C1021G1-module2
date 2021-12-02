@@ -6,8 +6,8 @@ public class ChuyenDoiTienTe {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;
         System.out.print("Enter amount of money :");
-        float USD =  sc.nextFloat() ;
-        float VND = USD / 23 ;
-        System.out.print("The amount to be exchanged is : " + VND);
+        float usd =  sc.nextFloat() ;
+        float vnd = usd / 23 ;
+        System.out.print("The amount to be exchanged is : " + vnd);
     }
 }
