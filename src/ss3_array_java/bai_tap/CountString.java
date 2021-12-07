@@ -7,18 +7,18 @@ import java.util.Scanner;
 public class CountString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập chuỗi ");
-        String chuoi1 = scanner.nextLine();
+        System.out.println("Enter String :");
+        String string = scanner.nextLine();
         char kiTu;
-        System.out.println("nhập kí tự cần đếm");
+        System.out.println("Enter string want count");
         kiTu = scanner.next().charAt(0);
         int count = 0;
-        for (int i = 0; i < chuoi1.length(); i++) {
-            if (chuoi1.charAt(i) == kiTu) {
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == kiTu) {
                 count++;
             }
         }
-        System.out.println(count);
+        System.out.println("The number of occurrences : " + count);
 
     }
 }
