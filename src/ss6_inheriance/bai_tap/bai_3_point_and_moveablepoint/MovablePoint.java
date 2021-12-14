@@ -3,54 +3,61 @@ package ss6_inheriance.bai_tap.bai_3_point_and_moveablepoint;
 import java.awt.*;
 
 public class MovablePoint extends Point {
-    private float xSpeed = 0.0f;
-    private float ySpeed = 0.0f;
+    public float xSpeed;
+    public float ySpeed;
+
+    public MovablePoint(float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+    }
+
+    public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
+        super(x, y);
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+    }
     public MovablePoint(){
-    }
-    public MovablePoint(float x,float y,float xSpeed,float ySpeed) {
 
-        this. xSpeed = xSpeed;
-        this. ySpeed = ySpeed;
     }
 
-    public float getXSpeed() {
-
-
+    public float getxSpeed() {
         return xSpeed;
     }
 
-    public void setXSpeed(float xSpeed) {
+    public void setxSpeed(float xSpeed) {
         this.xSpeed = xSpeed;
     }
 
-    public float getYSpeed() {
+    public float getySpeed() {
         return ySpeed;
     }
 
-    public void setYSpeed(float ySpeed) {
+    public void setySpeed(float ySpeed) {
         this.ySpeed = ySpeed;
     }
-    public void setSpeed (float xSpeed,float ySpeed){
-        this.xSpeed=xSpeed;
+    public void setSpeed(float xSpeed, float ySpeed){
+        this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
-    public float [] getSpeed(){
-        float [] arr3 = new float[2];
-        arr3[0] = xSpeed;
-        arr3[1] = ySpeed;
-        return arr3;
-    }
+    public float getSpeed(){
+        return (float) Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed);
 
+    }
     @Override
     public String toString() {
-        return "MovablePoint{" +
-                "xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
-                ", x=" + this.getX() +
-                ", y=" + this.getY() +
-                '}';
+        return "("  + x + "," + y + "),speed=(" + xSpeed + "," + ySpeed + ")";
     }
-    public MovablePoint move (){
+    public MovablePoint move(){
+        x += xSpeed;
+        y += ySpeed;
         return this;
+    }
+
+    public static void main(String[] args) {
+        MovablePoint movablePoint = new MovablePoint(2,5);
+        System.out.println(movablePoint);
+        System.out.println(movablePoint.getSpeed());
+        System.out.println(movablePoint.move());
+
     }
 }

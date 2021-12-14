@@ -1,17 +1,24 @@
 package ss6_inheriance.bai_tap.bai_1_class_circle_and_cylinder;
 
-public class Circle {
-    private double radius;
-    private String color;
-    private double perimeter;
-    private double area;
+import ss6_inheriance.thuc_hanh.Shape;
 
-    public Circle() {
+public class Circle extends Shape {
+    private double radius = 1.0;
+
+    public Circle(){
+
     }
 
-    public Circle(double radius, String color) {
+    public Circle(double radius){
+        this.radius =radius;
+    }
+
+    public Circle(double radius, String color, boolean filled){
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
+    }
+
+    public Circle(String color, double radius) {
     }
 
     public double getRadius() {
@@ -21,38 +28,28 @@ public class Circle {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-
-    public String getColor() {
-        return color;
+    public double getArea(){
+        return radius * radius * Math.PI;
     }
-
-    public void setColor(String color) {
-        this.color = color;
+    public double getPerimeter(){
+        return radius * 2 * Math.PI;
     }
-
-    public double getPerimeter() {
-        return 2*this.radius*Math.PI;
-    }
-
-    public void setPerimeter(double perimeter) {
-        this.perimeter = perimeter;
-    }
-
-    public double getArea() {
-        return this.radius*this.radius*Math.PI;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
     @Override
-    public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
-                ", perimeter=" + perimeter +
-                ", area=" + area +
-                '}';
+    public String toString(){
+        return "A Circle with radius="
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
+    }
+    // CircleTest
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        System.out.println(circle);
+
+        circle = new Circle(3.5);
+        System.out.println(circle);
+
+        circle = new Circle(3.5, "indigo", false);
+        System.out.println(circle);
     }
 }
