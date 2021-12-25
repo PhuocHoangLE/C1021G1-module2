@@ -1,18 +1,13 @@
 import java.util.LinkedList;
 public class tess {
     public static void main(String[] args) {
-
-        try {
-            int x = 0;
-            int y = 5 / x;
-        } catch (ArithmeticException e) {
-            System.out.println("Arithmetic");
-        } catch (Exception ae) {
-            System.out.println("Exception");
-        }
-        System.out.println("finished");
+        String x = "abc";
+        String y = "abc";
+        x.concat(y);
+        System.out.print(x);
     }
-}
+
+    }
 
 
 

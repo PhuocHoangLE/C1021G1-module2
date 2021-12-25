@@ -3,8 +3,8 @@ package ss16_io_text_file.bai_tap.copy_file;
 import java.io.*;
 
 public class CopyFile {
-    public static final String SOURCE_FILE = "D:\\CodeGym\\module_2\\src\\ss16_io_text_file\\bai_tap\\copy_file\\hoang.csv";
-    public static final String TARGET_FILE = "D:\\CodeGym\\module_2\\src\\ss16_io_text_file\\bai_tap\\copy_file\\hoang2.csv";
+    public static final String SOURCE_FILE = "D:\\CodeGym\\module_2\\src\\ss16_io_text_file\\bai_tap\\copy_file\\Input.csv";
+    public static final String TARGET_FILE = "D:\\CodeGym\\module_2\\src\\ss16_io_text_file\\bai_tap\\copy_file\\Output";
     public static String readFile(FileReader fileReader) {
         int i = 0;
         String result = "";
